@@ -5,8 +5,8 @@ export default function HomePage() {
     <>
       <main className="home">
         <div className="title-wrapper">
-          <img src="/title1.png" className="title1" alt="" />
-          <img src="/title2.png" className="title2" alt="" />
+          <img src="/logo.svg" className="logo" alt="" />
+          <h2>Memory  Game!</h2>
         </div>
         <div className="button-wrapper">
           <button className="mc-button play">Play</button>
