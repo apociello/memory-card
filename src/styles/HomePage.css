@@ -1,0 +1,31 @@
+.home-container {
+    height: 100%;
+}
+
+main.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  padding: 0 2rem;
+  color: white;
+}
+
+main.home h1 {
+    font-size: 3rem;
+}
+
+main.home button {
+    padding: 0.5rem;
+}
+
+footer {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem 2rem;
+}
+
+footer button {
+    padding: 0.5rem;
+}
