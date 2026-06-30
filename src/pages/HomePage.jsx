@@ -9,12 +9,12 @@ export default function HomePage() {
           <img src="/title2.png" className="title2" alt="" />
         </div>
         <div className="button-wrapper">
-          <button>Play</button>
+          <button className="mc-button play">Play</button>
         </div>
       </main>
       <footer>
-        <button>Sound</button>
-        <button>Music</button>
+        <button className="mc-button secondary">Sound</button>
+        <button className="mc-button secondary">Music</button>
       </footer>
     </>
   );

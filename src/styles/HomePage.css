@@ -1,3 +1,11 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Minecraft Ten';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/fonts/minecraftTen.woff2') format('woff2');
+}
+
 main.home {
   flex: 1;
   display: flex;
@@ -28,10 +36,6 @@ main.home {
   justify-content: center;
 }
 
-.button-wrapper button {
-  padding: 0.5rem;
-}
-
 footer {
   display: flex;
   gap: 1rem;
@@ -40,4 +44,47 @@ footer {
 
 footer button {
   padding: 0.5rem;
+}
+
+.mc-button {
+  font-family: 'Minecraft Ten', sans-serif;
+  height: 48px;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  border: 2px solid #000;
+  color: #ddd;
+  text-shadow: 2px 2px #000a;
+  box-shadow:
+    inset -2px -4px #0006,
+    inset 2px 2px #fff7;
+}
+
+.mc-button:active {
+  box-shadow:
+    inset -2px -4px #0004,
+    inset 2px 2px #fff5;
+}
+
+.mc-button.play {
+  background-color: #3c8527;
+  font-size: 1.5rem;
+}
+
+.mc-button.play:hover {
+  background-color: #337121;
+}
+
+.mc-button.secondary {
+  font-size: 1rem;
+  background: url('/mc-btn-bg.png');
+  background-position: center;
+  background-size: cover;
+  image-rendering: pixelated;
+}
+
+.mc-button.secondary:hover {
+  background-color: rgba(100, 100, 255, 0.4);
+  background-blend-mode: overlay;
+  text-shadow: 2px 2px #202013cc;
+  color: #ffffa0;
 }
