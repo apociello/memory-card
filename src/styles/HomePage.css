@@ -3,7 +3,7 @@
   font-family: 'Minecraft Ten';
   font-style: normal;
   font-weight: normal;
-  src: url('../fonts/minecraftTen.woff2') format('woff2');
+  src: url('../assets/fonts/minecraftTen.woff2') format('woff2');
 }
 
 main.home {
@@ -78,8 +78,9 @@ footer button {
 }
 
 .mc-button.secondary {
-  font-size: 1rem;
-  background: url('/mc-btn-bg.png');
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  background: url('/images/mc-btn-bg.png');
   background-position: center;
   background-size: cover;
   image-rendering: pixelated;
