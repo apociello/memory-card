@@ -1,11 +1,11 @@
 import '../styles/GamePage.css';
 
-export default function GamePage() {
+export default function GamePage({ playGame }) {
   return (
     <div className="game-page-wrapper">
       <header>
         <div className="back-btn-container">
-          <button>Back</button>
+          <button onClick={() => playGame(false)}>Back</button>
         </div>
 
         <div className="scores">

@@ -12,7 +12,7 @@ export default function App() {
         <source src="/videos/fox.mp4" type="video/mp4" />
       </video>
 
-      {gamePage ? <GamePage /> : <HomePage playGame={setGamePage} />}
+      {gamePage ? <GamePage playGame={setGamePage}/> : <HomePage playGame={setGamePage} />}
     </>
   );
 }
