@@ -3,7 +3,10 @@ import '../styles/HomePage.css';
 
 export default function HomePage() {
   const musicRef = useRef(null);
+  const clickSoundRef = useRef(new Audio('/sounds/click.mp3'));
+
   const [musicOn, setMusicOn] = useState(false);
+  const [soundOn, setSoundOn] = useState(true);
 
   function toggleMusic() {
     const music = musicRef.current;
@@ -18,6 +21,24 @@ export default function HomePage() {
     setMusicOn(!musicOn);
   }
 
+  function toggleSound() {
+    setSoundOn(!soundOn);
+  }
+
+  function playClick(isToggleSoundBtn = false) {
+    if (isToggleSoundBtn) {
+      if (!soundOn) {
+        clickSoundRef.current.currentTime = 0;
+        clickSoundRef.current.play();
+      }
+    } else {
+      if (soundOn) {
+        clickSoundRef.current.currentTime = 0;
+        clickSoundRef.current.play();
+      }
+    }
+  }
+
   return (
     <>
       <main className="home">
@@ -26,14 +47,31 @@ export default function HomePage() {
           <h2>Memory Game!</h2>
         </div>
         <div className="button-wrapper">
-          <button className="mc-button play">Play</button>
+          <button className="mc-button play" onClick={() => playClick()}>
+            Play
+          </button>
         </div>
       </main>
+
       <footer>
-        <button className="mc-button secondary">Sound: ON</button>
+        <button
+          className="mc-button secondary"
+          onClick={() => {
+            toggleSound();
+            playClick(true);
+          }}
+        >
+          Sound: {soundOn ? 'ON' : 'OFF'}
+        </button>
 
         <audio ref={musicRef} src="/music/sweden.mp3" loop></audio>
-        <button className="mc-button secondary" onClick={toggleMusic}>
+        <button
+          className="mc-button secondary"
+          onClick={() => {
+            toggleMusic();
+            playClick();
+          }}
+        >
           Music: {musicOn ? 'ON' : 'OFF'}
         </button>
       </footer>
