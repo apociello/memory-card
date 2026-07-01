@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import '../styles/HomePage.css';
 
-export default function HomePage() {
+export default function HomePage({ playGame }) {
   const musicRef = useRef(null);
   const clickSoundRef = useRef(new Audio('/sounds/click.mp3'));
 
@@ -47,7 +47,13 @@ export default function HomePage() {
           <h2>Memory Game!</h2>
         </div>
         <div className="button-wrapper">
-          <button className="mc-button play" onClick={() => playClick()}>
+          <button
+            className="mc-button play"
+            onClick={() => {
+              playClick();
+              playGame(true);
+            }}
+          >
             Play
           </button>
         </div>
