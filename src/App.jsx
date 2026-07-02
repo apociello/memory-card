@@ -51,7 +51,14 @@ export default function App() {
       <audio ref={musicRef} src="/music/sweden.mp3" loop></audio>
 
       {gamePage ? (
-        <GamePage playGame={setGamePage} />
+        <GamePage
+          soundOn={soundOn}
+          musicOn={musicOn}
+          playGame={setGamePage}
+          toggleMusic={toggleMusic}
+          toggleSound={toggleSound}
+          playClick={playClick}
+        />
       ) : (
         <HomePage
           soundOn={soundOn}

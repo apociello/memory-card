@@ -1,6 +1,15 @@
+import MusicBtn from '../components/MusicBtn';
+import SoundBtn from '../components/SoundBtn';
 import '../styles/GamePage.css';
 
-export default function GamePage({ playGame }) {
+export default function GamePage({
+  musicOn,
+  soundOn,
+  playGame,
+  toggleMusic,
+  toggleSound,
+  playClick,
+}) {
   return (
     <div className="game-page-wrapper">
       <header>
@@ -14,8 +23,17 @@ export default function GamePage({ playGame }) {
         </div>
 
         <div className="sound-settings">
-          <button>Sound: ON</button>
-          <button>Music: ON</button>
+          <SoundBtn
+            soundOn={soundOn}
+            toggleSound={toggleSound}
+            playClick={playClick}
+          />
+
+          <MusicBtn
+            musicOn={musicOn}
+            toggleMusic={toggleMusic}
+            playClick={playClick}
+          />
         </div>
       </header>
       <main className="game-board">

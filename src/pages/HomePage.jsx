@@ -1,3 +1,5 @@
+import MusicBtn from '../components/MusicBtn';
+import SoundBtn from '../components/SoundBtn';
 import '../styles/HomePage.css';
 
 export default function HomePage({
@@ -29,25 +31,17 @@ export default function HomePage({
       </main>
 
       <footer>
-        <button
-          className="mc-button secondary"
-          onClick={() => {
-            toggleSound();
-            playClick(true);
-          }}
-        >
-          Sound: {soundOn ? 'ON' : 'OFF'}
-        </button>
+        <SoundBtn
+          soundOn={soundOn}
+          toggleSound={toggleSound}
+          playClick={playClick}
+        />
 
-        <button
-          className="mc-button secondary"
-          onClick={() => {
-            toggleMusic();
-            playClick();
-          }}
-        >
-          Music: {musicOn ? 'ON' : 'OFF'}
-        </button>
+        <MusicBtn
+          musicOn={musicOn}
+          toggleMusic={toggleMusic}
+          playClick={playClick}
+        />
       </footer>
     </>
   );
