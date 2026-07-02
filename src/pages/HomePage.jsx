@@ -1,44 +1,13 @@
-import { useRef, useState } from 'react';
 import '../styles/HomePage.css';
 
-export default function HomePage({ playGame }) {
-  const musicRef = useRef(null);
-  const clickSoundRef = useRef(new Audio('/sounds/click.mp3'));
-
-  const [musicOn, setMusicOn] = useState(false);
-  const [soundOn, setSoundOn] = useState(true);
-
-  function toggleMusic() {
-    const music = musicRef.current;
-
-    if (musicOn) {
-      music.muted = true;
-    } else {
-      music.muted = false;
-      if (music.paused) music.play();
-    }
-
-    setMusicOn(!musicOn);
-  }
-
-  function toggleSound() {
-    setSoundOn(!soundOn);
-  }
-
-  function playClick(isToggleSoundBtn = false) {
-    if (isToggleSoundBtn) {
-      if (!soundOn) {
-        clickSoundRef.current.currentTime = 0;
-        clickSoundRef.current.play();
-      }
-    } else {
-      if (soundOn) {
-        clickSoundRef.current.currentTime = 0;
-        clickSoundRef.current.play();
-      }
-    }
-  }
-
+export default function HomePage({
+  musicOn,
+  soundOn,
+  playGame,
+  toggleMusic,
+  toggleSound,
+  playClick,
+}) {
   return (
     <>
       <main className="home">
@@ -70,7 +39,6 @@ export default function HomePage({ playGame }) {
           Sound: {soundOn ? 'ON' : 'OFF'}
         </button>
 
-        <audio ref={musicRef} src="/music/sweden.mp3" loop></audio>
         <button
           className="mc-button secondary"
           onClick={() => {
