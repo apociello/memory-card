@@ -52,11 +52,7 @@ export default function App() {
 
       {gamePage ? (
         <GamePage
-          soundOn={soundOn}
-          musicOn={musicOn}
           playGame={setGamePage}
-          toggleMusic={toggleMusic}
-          toggleSound={toggleSound}
           playClick={playClick}
         />
       ) : (
