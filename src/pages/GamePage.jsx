@@ -1,5 +1,7 @@
 import MusicBtn from '../components/MusicBtn';
 import SoundBtn from '../components/SoundBtn';
+import Card from '../components/Card';
+import cardList from '../data/data.js'
 import '../styles/GamePage.css';
 
 export default function GamePage({
@@ -45,7 +47,10 @@ export default function GamePage({
         </div>
       </header>
       <main className="game-board">
-        <h1>CARDS GO HERE</h1>
+        <Card card={cardList[4]}/>
+        <Card card={cardList[5]}/>
+        <Card card={cardList[9]}/>
+        <Card card={cardList[16]}/>
       </main>
     </div>
   );

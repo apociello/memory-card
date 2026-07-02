@@ -101,3 +101,5 @@ export const cardList = [
     img: 'Wooden_Axe.png',
   },
 ];
+
+export default cardList;
