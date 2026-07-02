@@ -14,7 +14,15 @@ export default function GamePage({
     <div className="game-page-wrapper">
       <header>
         <div className="back-btn-container">
-          <button onClick={() => playGame(false)}>Back</button>
+          <button
+            className="back-btn"
+            onClick={() => {
+              playClick();
+              playGame(false);
+            }}
+          >
+            <span className="arrow"></span>
+          </button>
         </div>
 
         <div className="scores">

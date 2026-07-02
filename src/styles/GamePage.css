@@ -29,3 +29,31 @@ main.game-board {
   justify-content: center;
   align-items: center;
 }
+
+.back-btn {
+  width: 48px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  width: 28px;
+  height: 28px;
+  background: white;
+
+  clip-path: polygon(
+    50% 5%, 40% 5%, 40% 15%, 30% 15%, 30% 25%, 20% 25%,
+    20% 35%, 10% 35%, 10% 45%, 0% 45%, 0% 55%, 10% 55%,
+    10% 65%, 20% 65%, 20% 75%, 30% 75%, 30% 85%, 40% 85%,
+    40% 95%, 50% 95%, 50% 85%, 40% 85%, 40% 75%, 30% 75%,
+    30% 65%, 20% 65%, 20% 55%, 100% 55%, 100% 45%, 20% 45%,
+    20% 35%, 30% 35%, 30% 25%, 40% 25%, 40% 15%, 50% 15%,
+    50% 5%
+  );
+}
