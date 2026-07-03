@@ -1,10 +1,10 @@
-export default function Card({ card }) {
+export default function Card({ card, pickCard }) {
   return (
-    <div key={card.id} className="card">
+    <button className="card" onClick={() => pickCard(card.id)}>
       <div className="img-wrapper">
-        <img src={`/images/cards/${card.img}`} />
+        <img src={`/images/cards/${card.img}`} draggable="false" />
       </div>
       <p>{card.name}</p>
-    </div>
+    </button>
   );
 }
