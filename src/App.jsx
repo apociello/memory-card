@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import HomePage from './pages/HomePage';
 import GamePage from './pages/GamePage';
-import './App.css';
+import './styles/App.css';
 
 export default function App() {
   const musicRef = useRef(null);

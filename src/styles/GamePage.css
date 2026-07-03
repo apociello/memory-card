@@ -12,6 +12,7 @@
   flex-direction: column;
   color: #f7f7f7;
 }
+
 header {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
