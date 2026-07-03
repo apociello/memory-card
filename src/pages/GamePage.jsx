@@ -28,9 +28,13 @@ function shuffleCards(array) {
   return arr;
 }
 
-export default function GamePage({ playGame, playClick }) {
+export default function GamePage({
+  playGame,
+  playClick,
+  bestScore,
+  setBestScore,
+}) {
   const [score, setScore] = useState(0);
-  const [bestScore, setBestScore] = useState(0);
   const [currentCards, setCurrentCards] = useState(() =>
     getRandomCards(INITIAL_CARDS),
   );

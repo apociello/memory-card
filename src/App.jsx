@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import HomePage from './pages/HomePage';
 import GamePage from './pages/GamePage';
 import './styles/App.css';
@@ -10,6 +10,14 @@ export default function App() {
   const [musicOn, setMusicOn] = useState(false);
   const [soundOn, setSoundOn] = useState(true);
   const [gamePage, setGamePage] = useState(false);
+  const [bestScore, setBestScore] = useState(() => {
+    const saved = localStorage.getItem('bestScore');
+    return saved ? Number(saved) : 0;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('bestScore', bestScore);
+  }, [bestScore]);
 
   function toggleMusic() {
     const music = musicRef.current;
@@ -54,6 +62,8 @@ export default function App() {
         <GamePage
           playGame={setGamePage}
           playClick={playClick}
+          bestScore={bestScore}
+          setBestScore={setBestScore}
         />
       ) : (
         <HomePage
