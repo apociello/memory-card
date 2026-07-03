@@ -1,5 +1,6 @@
-import MusicBtn from '../components/MusicBtn';
+import PlayBtn from '../components/PlayBtn';
 import SoundBtn from '../components/SoundBtn';
+import MusicBtn from '../components/MusicBtn';
 import '../styles/HomePage.css';
 
 export default function HomePage({
@@ -23,31 +24,21 @@ export default function HomePage({
           <h2>Memory Game!</h2>
         </div>
         <div className="button-wrapper">
-          <button
-            className="mc-button play"
-            onClick={() => {
-              playClick();
-              playGame(true);
-            }}
-          >
-            Play
-          </button>
+          <PlayBtn playGame={playGame} playClick={playClick} />
+
+          <SoundBtn
+            soundOn={soundOn}
+            toggleSound={toggleSound}
+            playClick={playClick}
+          />
+
+          <MusicBtn
+            musicOn={musicOn}
+            toggleMusic={toggleMusic}
+            playClick={playClick}
+          />
         </div>
       </main>
-
-      <footer>
-        <SoundBtn
-          soundOn={soundOn}
-          toggleSound={toggleSound}
-          playClick={playClick}
-        />
-
-        <MusicBtn
-          musicOn={musicOn}
-          toggleMusic={toggleMusic}
-          playClick={playClick}
-        />
-      </footer>
     </>
   );
 }

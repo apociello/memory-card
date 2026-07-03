@@ -5,7 +5,7 @@ main.home {
 }
 
 .title-wrapper {
-  flex: 1;
+  flex: 0.5;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,14 +25,17 @@ main.home {
 .button-wrapper {
   flex: 1;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
 }
 
 .mc-button {
   font-family: 'Minecraft Ten', sans-serif;
   height: 48px;
-  padding: 0.5rem 2rem;
+  width: 220px;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   border: 2px solid #000;
   color: #f7f7f7;
@@ -58,8 +61,7 @@ main.home {
 }
 
 .mc-button.secondary {
-  font-size: 0.8rem;
-  padding: 0.5rem 1rem;
+  font-size: 1rem;
   background: url('/images/mc-btn-bg.png');
   background-position: center;
   background-size: cover;
@@ -71,10 +73,4 @@ main.home {
   background-blend-mode: overlay;
   text-shadow: 2px 2px #202013cc;
   color: #ffffa0;
-}
-
-footer {
-  display: flex;
-  gap: 1rem;
-  padding: 2rem;
 }
