@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Mojangles';
+  src: url('../assets/fonts/Mojangles.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .game-page-wrapper {
   flex: 1;
   display: flex;
@@ -82,9 +90,10 @@ main.game-board {
 }
 
 .card p {
+  font-family: 'Mojangles';
   padding-bottom: 0.3rem;
   color: #ffffff;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   text-align: center;
   text-shadow: 2px 2px 0 rgba(0, 0, 0, .6);
 }
