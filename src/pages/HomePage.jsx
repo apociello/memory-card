@@ -14,7 +14,12 @@ export default function HomePage({
     <>
       <main className="home">
         <div className="title-wrapper">
-          <img src="/images/logo.svg" className="logo" alt="" />
+          <img
+            src="/images/logo.svg"
+            className="logo"
+            alt=""
+            draggable="false"
+          />
           <h2>Memory Game!</h2>
         </div>
         <div className="button-wrapper">
