@@ -100,6 +100,7 @@ main.game-board {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  align-content: flex-start;
   gap: 1rem;
   padding: 2rem;
 }
@@ -140,4 +141,56 @@ main.game-board {
   font-size: 0.9rem;
   text-align: center;
   text-shadow: 2px 2px 0 rgba(0, 0, 0, .6);
+}
+
+/* Loss Modal */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.modal-info {
+  font-family: 'Mojangles';
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  
+}
+
+.modal-info h1 {
+  font-size: 3rem;
+}
+
+.modal-info p {
+  font-size: 1.5rem;
+}
+
+.modal-info .modal-score {
+  color: #fefe8a;
+}
+
+.modal-buttons {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.modal .modal-buttons button {
+  font-family: 'Mojangles';
+  font-size: 1.35rem; 
+  height: 52px;
+  width: 500px;
+  padding-top: 0.2rem;
 }
