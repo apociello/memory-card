@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import Card from '../components/Card';
 import cardList from '../data/data.js';
+import Card from '../components/Card';
+import LoadingBar from '../components/LoadingBar.jsx';
 import '../styles/GamePage.css';
 
 const INITIAL_CARDS = 4;
@@ -92,6 +93,11 @@ export default function GamePage({
         <p>Score: {score}</p>
         <p>Best Score: {bestScore}</p>
       </header>
+
+      <div className="loading-bar-wrapper">
+        <LoadingBar total={currentCards.length} points={chosenCardIds.length} />
+      </div>
+
       <main className="game-board">
         {currentCards.map((card) => (
           <Card key={card.id} card={card} pickCard={pickCard} />
