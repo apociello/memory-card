@@ -2,7 +2,7 @@ import { useState } from 'react';
 import cardList from '../data/data.js';
 import Card from '../components/Card';
 import LoadingBar from '../components/LoadingBar.jsx';
-import LossModal from '../components/LossModal.jsx';
+import Modal from '../components/Modal.jsx';
 import '../styles/GamePage.css';
 
 const INITIAL_CARDS = 4;
@@ -41,15 +41,18 @@ export default function GamePage({
     getRandomCards(INITIAL_CARDS),
   );
   const [chosenCardIds, setChosenCardIds] = useState([]);
-  const [showLoss, setShowLoss] = useState(false);
+  const [gameResult, setGameResult] = useState('');
 
-  function nextRound(newScore) {
-    if (newScore === cardList.length) {
-      console.log('You won!');
+  function nextRound() {
+    if (currentCards.length === cardList.length) {
+      setGameResult('win');
     } else {
-      setCurrentCards(getRandomCards(currentCards.length + CARD_INCREMENT));
+      const preNumCards = currentCards.length + CARD_INCREMENT;
+      const maxCards = cardList.length;
+      const numCards = Math.min(preNumCards, maxCards);
+
+      setCurrentCards(getRandomCards(numCards));
       setChosenCardIds([]);
-      console.log('next round');
     }
   }
 
@@ -57,14 +60,14 @@ export default function GamePage({
     setScore(0);
     setChosenCardIds([]);
     setCurrentCards(getRandomCards(INITIAL_CARDS));
-    setShowLoss(false);
+    setGameResult('');
   }
 
   function pickCard(cardId) {
     const alreadyChosen = chosenCardIds.includes(cardId);
 
     if (alreadyChosen) {
-      setShowLoss(true);
+      setGameResult('lose');
     } else {
       const newScore = score + 1;
       setScore(newScore);
@@ -72,7 +75,7 @@ export default function GamePage({
       setChosenCardIds([...chosenCardIds, cardId]);
 
       if (chosenCardIds.length + 1 === currentCards.length) {
-        nextRound(newScore);
+        nextRound();
       } else {
         setCurrentCards(shuffleCards(currentCards));
       }
@@ -106,8 +109,9 @@ export default function GamePage({
         ))}
       </main>
 
-      {showLoss && (
-        <LossModal
+      {gameResult && (
+        <Modal
+          gameResult={gameResult}
           score={score}
           resetGame={resetGame}
           playGame={playGame}

@@ -1,9 +1,15 @@
-export default function LossModal({ score, resetGame, playGame, playClick }) {
+export default function Modal({
+  gameResult,
+  score,
+  resetGame,
+  playGame,
+  playClick,
+}) {
   return (
     <div className="overlay">
       <div className="modal">
         <div className="modal-info">
-          <h1>You lose!</h1>
+          <h1>You {gameResult}!</h1>
           <p>
             Score: <span className="modal-score">{score}</span>
           </p>
