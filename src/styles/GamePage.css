@@ -120,6 +120,11 @@ main.game-board {
     inset -2px -2px 0 #101010,
     0 6px 12px rgba(0, 0, 0, 0.35);
   cursor: pointer;
+  transition: transform .12s;
+}
+
+.card:active {
+  transform: scale(.97);
 }
 
 .card .img-wrapper {
