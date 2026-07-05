@@ -38,6 +38,21 @@ export default function GamePage({
   setBestScore,
 }) {
   const cardSoundRef = useRef(new Audio('/sounds/wood.mp3'));
+  const levelSoundRef = useRef(new Audio('/sounds/level_up.ogg'));
+
+  function cardSound(soundOn) {
+    if (soundOn) {
+      cardSoundRef.current.currentTime = 0;
+      cardSoundRef.current.play();
+    }
+  }
+
+  function levelSound(soundOn) {
+    if (soundOn) {
+      levelSoundRef.current.currentTime = 0;
+      levelSoundRef.current.play();
+    }
+  }
 
   const [score, setScore] = useState(0);
   const [currentCards, setCurrentCards] = useState(() =>
@@ -56,6 +71,7 @@ export default function GamePage({
 
       setCurrentCards(getRandomCards(numCards));
       setChosenCardIds([]);
+      levelSound(soundOn);
     }
   }
 
@@ -82,13 +98,6 @@ export default function GamePage({
       } else {
         setCurrentCards(shuffleCards(currentCards));
       }
-    }
-  }
-
-  function cardSound(soundOn) {
-    if (soundOn) {
-      cardSoundRef.current.currentTime = 0;
-      cardSoundRef.current.play();
     }
   }
 
