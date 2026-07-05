@@ -60,6 +60,7 @@ export default function App() {
 
       {gamePage ? (
         <GamePage
+          soundOn={soundOn}
           playGame={setGamePage}
           playClick={playClick}
           bestScore={bestScore}

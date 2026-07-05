@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import cardList from '../data/data.js';
 import Card from '../components/Card';
 import LoadingBar from '../components/LoadingBar.jsx';
@@ -31,11 +31,14 @@ function shuffleCards(array) {
 }
 
 export default function GamePage({
+  soundOn,
   playGame,
   playClick,
   bestScore,
   setBestScore,
 }) {
+  const cardSoundRef = useRef(new Audio('/sounds/wood.mp3'));
+
   const [score, setScore] = useState(0);
   const [currentCards, setCurrentCards] = useState(() =>
     getRandomCards(INITIAL_CARDS),
@@ -82,6 +85,13 @@ export default function GamePage({
     }
   }
 
+  function cardSound(soundOn) {
+    if (soundOn) {
+      cardSoundRef.current.currentTime = 0;
+      cardSoundRef.current.play();
+    }
+  }
+
   return (
     <div className="game-page-wrapper">
       <header>
@@ -105,7 +115,12 @@ export default function GamePage({
 
       <main className="game-board">
         {currentCards.map((card) => (
-          <Card key={card.id} card={card} pickCard={pickCard} />
+          <Card
+            key={card.id}
+            card={card}
+            pickCard={pickCard}
+            cardSound={() => cardSound(soundOn)}
+          />
         ))}
       </main>
 
