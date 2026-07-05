@@ -33,7 +33,7 @@ header {
 }
 
 header > p {
-  align-self: center;
+  align-self: flex-end;
 }
 
 header > :nth-child(3) {
@@ -143,11 +143,11 @@ main.game-board {
   text-shadow: 2px 2px 0 rgba(0, 0, 0, .6);
 }
 
-/* Loss Modal */
+/* Modal */
 .overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, .8);
+  background-color: rgba(0, 0, 0, .75);
 }
 
 .modal {
@@ -165,7 +165,6 @@ main.game-board {
   justify-content: center;
   align-items: center;
   gap: 2.5rem;
-  
 }
 
 .modal-info h1 {
@@ -187,10 +186,10 @@ main.game-board {
   gap: 0.6rem;
 }
 
-.modal .modal-buttons button {
+.modal-buttons button.mc-button.secondary {
   font-family: 'Mojangles';
   font-size: 1.35rem; 
   height: 52px;
   width: 500px;
-  padding-top: 0.2rem;
+  padding: 0.2rem 1rem 0.25rem;
 }

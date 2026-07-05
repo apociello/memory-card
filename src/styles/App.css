@@ -11,3 +11,35 @@
 main {
   flex: 1;
 }
+
+/* mc buttons */
+.mc-button {
+  cursor: pointer;
+  border: 2px solid #000;
+  color: #f7f7f7;
+  text-shadow: 2px 2px #000a;
+  box-shadow:
+    inset -2px -4px #0006,
+    inset 2px 2px #fff7;
+}
+
+.mc-button:active {
+  box-shadow:
+    inset -2px -4px #0004,
+    inset 2px 2px #fff5;
+}
+
+.mc-button.secondary {
+  font-size: 1rem;
+  background: url('/images/mc-btn-bg.png');
+  background-position: center;
+  background-size: cover;
+  image-rendering: pixelated;
+}
+
+.mc-button.secondary:hover {
+  background-color: rgba(100, 100, 255, 0.4);
+  background-blend-mode: overlay;
+  text-shadow: 2px 2px #202013cc;
+  color: #ffffa0;
+}
