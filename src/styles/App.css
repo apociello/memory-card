@@ -37,9 +37,11 @@ main {
   image-rendering: pixelated;
 }
 
-.mc-button.secondary:hover {
-  background-color: rgba(100, 100, 255, 0.4);
-  background-blend-mode: overlay;
-  text-shadow: 2px 2px #202013cc;
-  color: #ffffa0;
+@media (hover: hover) {
+  .mc-button.secondary:hover {
+    background-color: rgba(100, 100, 255, 0.4);
+    background-blend-mode: overlay;
+    text-shadow: 2px 2px #202013cc;
+    color: #ffffa0;
+  }
 }

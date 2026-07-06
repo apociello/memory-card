@@ -43,8 +43,10 @@ main.home {
   font-size: 1.5rem;
 }
 
-.mc-button.play:hover {
-  background-color: #337121;
+@media (hover: hover) {
+  .mc-button.play:hover {
+    background-color: #337121;
+  }
 }
 
 /* - - MEDIA - - */
