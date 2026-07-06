@@ -37,13 +37,21 @@ export default function GamePage({
   bestScore,
   setBestScore,
 }) {
-  const cardSoundRef = useRef(new Audio('/sounds/wood.mp3'));
+  const correctSoundRef = useRef(new Audio('/sounds/wood.mp3'));
+  const failSoundRef = useRef(new Audio('/sounds/hit.mp3'));
   const levelSoundRef = useRef(new Audio('/sounds/level_up.ogg'));
 
-  function cardSound(soundOn) {
+  function correctSound(soundOn) {
     if (soundOn) {
-      cardSoundRef.current.currentTime = 0;
-      cardSoundRef.current.play();
+      correctSoundRef.current.currentTime = 0;
+      correctSoundRef.current.play();
+    }
+  }
+
+  function failSound(soundOn) {
+    if (soundOn) {
+      failSoundRef.current.currentTime = 0;
+      failSoundRef.current.play();
     }
   }
 
@@ -87,7 +95,9 @@ export default function GamePage({
 
     if (alreadyChosen) {
       setGameResult('lose');
+      failSound(soundOn);
     } else {
+      correctSound(soundOn);
       const newScore = score + 1;
       setScore(newScore);
       if (newScore > bestScore) setBestScore(newScore);
@@ -125,12 +135,7 @@ export default function GamePage({
 
       <main className="game-board">
         {currentCards.map((card) => (
-          <Card
-            key={card.id}
-            card={card}
-            pickCard={pickCard}
-            cardSound={() => cardSound(soundOn)}
-          />
+          <Card key={card.id} card={card} pickCard={pickCard} />
         ))}
       </main>
 

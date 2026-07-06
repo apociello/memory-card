@@ -1,10 +1,9 @@
-export default function Card({ card, pickCard, cardSound }) {
+export default function Card({ card, pickCard }) {
   return (
     <button
       className="card"
       onClick={() => {
         pickCard(card.id);
-        cardSound();
       }}
     >
       <div className="img-wrapper">
