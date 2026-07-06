@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import HomePage from './pages/HomePage';
 import GamePage from './pages/GamePage';
+import cardList from './data/data';
 import './styles/App.css';
 
 export default function App() {
@@ -18,6 +19,14 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem('bestScore', bestScore);
   }, [bestScore]);
+
+  // Preload all card images to avoid loading delays during gameplay
+  useEffect(() => {
+    cardList.forEach((card) => {
+      const img = new Image();
+      img.src = `/images/cards/${card.img}`;
+    });
+  }, []);
 
   function toggleMusic() {
     const music = musicRef.current;
