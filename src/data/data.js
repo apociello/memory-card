@@ -44,7 +44,7 @@ export const cardList = [
   { id: 43, name: 'Sand', img: 'Sand.png' },
   { id: 44, name: 'Shulker Box', img: 'Shulker_Box.png' },
   { id: 45, name: 'Soul Lantern', img: 'Soul_Lantern.gif' },
-  { id: 46, name: 'Warped Sign', img: 'Warped_Sign.png' },
+  { id: 46, name: 'Soul Sand', img: 'Soul_Sand.png' },
   { id: 47, name: 'Brick Slab', img: 'Brick_Slab.png' },
   { id: 48, name: 'Lectern', img: 'Lectern.png' },
   { id: 49, name: 'Lily Pad', img: 'Lily_Pad.png' },

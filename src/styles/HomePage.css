@@ -46,3 +46,38 @@ main.home {
 .mc-button.play:hover {
   background-color: #337121;
 }
+
+/* - - MEDIA - - */
+@media (max-width: 580px) {
+  .title-wrapper .logo {
+    width: 25rem;
+  }
+
+  .title-wrapper h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 440px) {
+  .title-wrapper .logo {
+    width: 20rem;
+  }
+
+  .title-wrapper h2 {
+    font-size: 1.8rem;
+  }
+
+  .mc-button.play {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .title-wrapper .logo {
+    width: 17.5rem;
+  }
+
+  .title-wrapper h2 {
+    font-size: 1.7rem;
+  }
+}
