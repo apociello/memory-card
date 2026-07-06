@@ -263,7 +263,6 @@ main.game-board {
 
   .mc-loading-text {
     font-size: 0.7rem;
-    margin: 0 0 6px;
   }
 
   .mc-loading-track {
@@ -278,7 +277,6 @@ main.game-board {
   .game-board .card {
     width: 100px;
     height: 129px;
-    padding: 0.5rem;
   }
 
   .card img {

@@ -42,31 +42,10 @@ export default function GamePage({
   const levelSoundRef = useRef(new Audio('/sounds/level_up.ogg'));
   const victorySoundRef = useRef(new Audio('/sounds/victory.ogg'));
 
-  function correctSound(soundOn) {
+  function playSound(ref) {
     if (soundOn) {
-      correctSoundRef.current.currentTime = 0;
-      correctSoundRef.current.play();
-    }
-  }
-
-  function failSound(soundOn) {
-    if (soundOn) {
-      failSoundRef.current.currentTime = 0;
-      failSoundRef.current.play();
-    }
-  }
-
-  function levelSound(soundOn) {
-    if (soundOn) {
-      levelSoundRef.current.currentTime = 0;
-      levelSoundRef.current.play();
-    }
-  }
-
-  function victorySound(soundOn) {
-    if (soundOn) {
-      victorySoundRef.current.currentTime = 0;
-      victorySoundRef.current.play();
+      ref.current.currentTime = 0;
+      ref.current.play();
     }
   }
 
@@ -79,7 +58,7 @@ export default function GamePage({
 
   function nextRound() {
     if (currentCards.length === cardList.length) {
-      victorySound(soundOn);
+      playSound(victorySoundRef);
       setGameResult('win');
     } else {
       const preNumCards = currentCards.length + CARD_INCREMENT;
@@ -88,7 +67,7 @@ export default function GamePage({
 
       setCurrentCards(getRandomCards(numCards));
       setChosenCardIds([]);
-      levelSound(soundOn);
+      playSound(levelSoundRef);
     }
   }
 
@@ -104,9 +83,10 @@ export default function GamePage({
 
     if (alreadyChosen) {
       setGameResult('lose');
-      failSound(soundOn);
+      playSound(failSoundRef);
     } else {
-      correctSound(soundOn);
+      playSound(correctSoundRef);
+
       const newScore = score + 1;
       setScore(newScore);
       if (newScore > bestScore) setBestScore(newScore);

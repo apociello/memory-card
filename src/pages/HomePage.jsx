@@ -12,33 +12,31 @@ export default function HomePage({
   playClick,
 }) {
   return (
-    <>
-      <main className="home">
-        <div className="title-wrapper">
-          <img
-            src="/images/logo.svg"
-            className="logo"
-            alt="Minecraft logo"
-            draggable="false"
-          />
-          <h1>Memory Game!</h1>
-        </div>
-        <div className="button-wrapper">
-          <PlayBtn playGame={playGame} playClick={playClick} />
+    <main className="home">
+      <div className="title-wrapper">
+        <img
+          src="/images/logo.svg"
+          className="logo"
+          alt="Minecraft logo"
+          draggable="false"
+        />
+        <h1>Memory Game!</h1>
+      </div>
+      <div className="button-wrapper">
+        <PlayBtn playGame={playGame} playClick={playClick} />
 
-          <SoundBtn
-            soundOn={soundOn}
-            toggleSound={toggleSound}
-            playClick={playClick}
-          />
+        <SoundBtn
+          soundOn={soundOn}
+          toggleSound={toggleSound}
+          playClick={playClick}
+        />
 
-          <MusicBtn
-            musicOn={musicOn}
-            toggleMusic={toggleMusic}
-            playClick={playClick}
-          />
-        </div>
-      </main>
-    </>
+        <MusicBtn
+          musicOn={musicOn}
+          toggleMusic={toggleMusic}
+          playClick={playClick}
+        />
+      </div>
+    </main>
   );
 }
