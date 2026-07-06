@@ -4,7 +4,12 @@ export default function LoadingBar({ total, points }) {
       <p className="mc-loading-text">
         {points} / {total}
       </p>
-      <div className="mc-loading-track">
+      <div
+        className="mc-loading-track"
+        aria-valuemin={0}
+        aria-valuemax={total}
+        aria-valuenow={points}
+      >
         <div
           className="mc-loading-fill"
           style={{ width: `${(points / total) * 100}%` }}

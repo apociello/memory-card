@@ -106,6 +106,7 @@ export default function GamePage({
       <header>
         <button
           className="back-btn"
+          aria-label="Go back to home"
           onClick={() => {
             playClick();
             playGame(false);

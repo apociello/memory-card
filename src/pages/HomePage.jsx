@@ -18,10 +18,10 @@ export default function HomePage({
           <img
             src="/images/logo.svg"
             className="logo"
-            alt=""
+            alt="Minecraft logo"
             draggable="false"
           />
-          <h2>Memory Game!</h2>
+          <h1>Memory Game!</h1>
         </div>
         <div className="button-wrapper">
           <PlayBtn playGame={playGame} playClick={playClick} />

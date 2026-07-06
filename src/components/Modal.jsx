@@ -7,9 +7,14 @@ export default function Modal({
 }) {
   return (
     <div className="overlay">
-      <div className="modal">
+      <div
+        className="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="game-result"
+      >
         <div className="modal-info">
-          <h1>You {gameResult}!</h1>
+          <h1 id="game-result">You {gameResult}!</h1>
           <p>
             Score: <span className="modal-score">{score}</span>
           </p>

@@ -1,4 +1,4 @@
-export default function playBtn({ playGame, playClick }) {
+export default function PlayBtn({ playGame, playClick }) {
   return (
     <button
       className="mc-button play"
