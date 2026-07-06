@@ -40,6 +40,7 @@ export default function GamePage({
   const correctSoundRef = useRef(new Audio('/sounds/wood.mp3'));
   const failSoundRef = useRef(new Audio('/sounds/hit.mp3'));
   const levelSoundRef = useRef(new Audio('/sounds/level_up.ogg'));
+  const victorySoundRef = useRef(new Audio('/sounds/victory.ogg'));
 
   function correctSound(soundOn) {
     if (soundOn) {
@@ -62,6 +63,13 @@ export default function GamePage({
     }
   }
 
+  function victorySound(soundOn) {
+    if (soundOn) {
+      victorySoundRef.current.currentTime = 0;
+      victorySoundRef.current.play();
+    }
+  }
+
   const [score, setScore] = useState(0);
   const [currentCards, setCurrentCards] = useState(() =>
     getRandomCards(INITIAL_CARDS),
@@ -71,6 +79,7 @@ export default function GamePage({
 
   function nextRound() {
     if (currentCards.length === cardList.length) {
+      victorySound(soundOn);
       setGameResult('win');
     } else {
       const preNumCards = currentCards.length + CARD_INCREMENT;
