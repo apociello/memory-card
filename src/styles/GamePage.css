@@ -195,7 +195,6 @@ main.game-board {
   font-size: 1.35rem; 
   height: 52px;
   width: 500px;
-  padding: 0.2rem 1rem 0.25rem;
 }
 
 /* Best Score format*/
@@ -348,7 +347,7 @@ main.game-board {
   }
 
   .modal-buttons button.mc-button.secondary {
-    width: 250px;
+    width: 260px;
   }
 
   .desktop-text {
