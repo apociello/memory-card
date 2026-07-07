@@ -61,7 +61,15 @@ export default function App() {
 
   return (
     <>
-      <video autoPlay loop muted playsInline className="bg-video">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        poster="/images/poster.webp"
+        className="bg-video"
+      >
         <source src="/videos/fox.mp4" type="video/mp4" />
       </video>
 
