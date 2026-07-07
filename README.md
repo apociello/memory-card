@@ -3,7 +3,16 @@
 A memory card game built with React, themed around Minecraft.
  
 🔗 [Live Demo](https://minecraft-memory-rose.vercel.app/)
- 
+
+## Screenshots
+
+### Home Screen
+
+![Home Screen](./screenshots/home.png)
+
+### Gameplay
+
+![Gameplay](./screenshots/gameplay.png)
 ## How to play
 
 Click on a card to score a point, but don't pick the same card twice in a round. Complete the round to unlock the next one with more cards. Beat every round to win!
