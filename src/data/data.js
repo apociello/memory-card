@@ -34,7 +34,7 @@ export const cardList = [
   { id: 33, name: 'White Wool', img: 'White_Wool.png' },
   { id: 34, name: 'Stone Hoe', img: 'Stone_Hoe.png' },
   { id: 35, name: 'Poppy', img: 'Poppy.png' },
-  { id: 36, name: 'Carved Pumpkin', img: 'Carved_Pumpkin.png' },
+  { id: 36, name: 'Pumpkin', img: 'Pumpkin.png' },
   { id: 37, name: 'Anvil', img: 'Anvil.png' },
   { id: 38, name: 'Stick', img: 'Stick.png' },
   { id: 39, name: 'Gold Nugget', img: 'Gold_Nugget.png' },

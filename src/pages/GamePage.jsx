@@ -115,7 +115,11 @@ export default function GamePage({
         </button>
 
         <p>Score: {score}</p>
-        <p>Best Score: {bestScore}</p>
+        <p>
+          <span className="desktop-text">Best Score: </span>
+          <span className="mobile-text">Best: </span>
+          {bestScore}
+        </p>
       </header>
 
       <div className="loading-bar-wrapper">
