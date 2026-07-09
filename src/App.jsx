@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { useEffect, useRef, useState } from 'react';
 import HomePage from './pages/HomePage';
 import GamePage from './pages/GamePage';
@@ -93,6 +94,8 @@ export default function App() {
           playClick={playClick}
         />
       )}
+
+      <Analytics />
     </>
   );
 }
